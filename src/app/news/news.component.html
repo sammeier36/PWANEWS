@@ -1,0 +1,10 @@
+<div *ngIf="news$ | async" class="container">
+    <h1>NEWS</h1>
+    <div class="content-container row">
+        <div class="news-item col-md-4 col-sm-12" *ngFor="let item of (news$ | async)">
+            <h2>{{item.title}}</h2>
+            <img [src]="item.enclosure.url">
+            <p>{{item.contentSnippet}}</p>
+        </div>
+    </div>
+</div>
