@@ -6,6 +6,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NewsModule } from './news/news.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -14,11 +17,14 @@ import { NewsModule } from './news/news.module';
   ],
   imports: [
     BrowserModule,
+    CoreModule,
+    SharedModule,
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
-    NewsModule
+    NewsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   exports: [],

@@ -5,6 +5,9 @@ import { NewsService } from './news.service';
 import { reducers, effects } from './store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from '../shared/shared.module';
+import { CoreModule } from '../core/core.module';
 
 
 
@@ -14,6 +17,9 @@ import { StoreModule } from '@ngrx/store';
   ],
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    CoreModule,
     StoreModule.forFeature('news', reducers),
     EffectsModule.forFeature(effects),
   ],
